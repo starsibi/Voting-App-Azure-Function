@@ -17,6 +17,7 @@ namespace Voting_App
         public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,            
             ILogger log)
         {
+            log.LogInformation("GetVotes Method gets started...");
             var acc = new CloudStorageAccount(
                          new StorageCredentials("storageaccountvotinad34", "wkvYBAxb+fKwsQVt/X4lNPVVF8IeFq9HJJjmvIYNUzlXYjM1/pslq339TVhzot+tQGZrC1pETDKPzWQXnY9Uyg=="), true);
             var tableClient = acc.CreateCloudTableClient();
