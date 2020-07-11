@@ -33,7 +33,7 @@ namespace Voting_App
                 {
                     PartitionKey = RowKey = "3";
                 }
-
+                
                 TableOperation operation = TableOperation.Retrieve<Votes>(PartitionKey, RowKey);
                 TableResult result = await table.ExecuteAsync(operation);                
                 if (result.Result != null)
